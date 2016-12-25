@@ -1,0 +1,25 @@
+{
+  "name": "account",
+  "version": "0.1.0",
+  "description": "An account page",
+  "scripts": {
+    "start": "browser-sync start --server . --files=\"*.html, **/*.less, **/*.css, **/*.js\" --no-notify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zce/account-pages.git"
+  },
+  "author": "iceStone <ice@micua.com> (http://www.micua.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zce/account-pages/issues"
+  },
+  "homepage": "https://github.com/zce/account-pages#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "less": "^2.7.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5"
+  }
+}

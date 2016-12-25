@@ -1,0 +1,373 @@
+@shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+@radius: 5px;
+@light: #fff;
+@dark: #ed2553;
+@gray: #666;
+@input-transform: translate(-14%, -50%) scale(0.75);
+
+body {
+  background: #e9e9e9;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  font-size: 14px;
+  color: @gray;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: @gray;
+  text-decoration: none;
+}
+
+body > .header {
+  padding: 50px 0;
+  text-align: center;
+  letter-spacing: 2px;
+
+  h1 {
+    margin: 0 0 20px;
+    font-size: 48px;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 12px;
+
+    i {
+      color: @dark;
+    }
+    a {
+      color: @dark;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}
+
+.main {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto 100px;
+}
+
+.card {
+  position: relative;
+  padding: 60px 0 40px 0;
+  background: @light;
+  box-sizing: border-box;
+  box-shadow: @shadow;
+  border-radius: @radius;
+  transition: .3s ease;
+
+  // &:first-child {
+  //   // content: '';
+  //   // display: block;
+  //   height: 10px;
+  //   margin: 0 10px;
+  //   padding: 0;
+  //   background: #fafafa;
+  //   border-radius: @radius @radius 0 0;
+  // }
+
+  &:first-child::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    right: 10px;
+    z-index: -1;
+    height: 10px;
+    box-shadow: @shadow;
+    background: darken(@light, 3%);
+    border-radius: @radius @radius 0 0;
+  }
+
+  .header {
+    .title {
+      margin: 0 0 35px;
+      padding: 10px 0 10px 50px;
+      color: @dark;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 45px;
+      border-left: 5px solid @dark;
+      text-transform: uppercase;
+    }
+    .toggle {
+
+    }
+  }
+
+  .field {
+    position: relative;
+    margin: 0 60px 50px;
+
+    input {
+      outline: none;
+      z-index: 1;
+      position: relative;
+      background: none;
+      width: 100%;
+      border: 0;
+      color: #212121;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 55px;
+
+      &:focus ~ label {
+        color: #9d9d9d;
+        transform: @input-transform;
+      }
+
+      &:focus ~ .line:before,
+      &:focus ~ .line:after {
+        width: 50%;
+      }
+
+      &:valid ~ label {
+        color: #9d9d9d;
+        transform: @input-transform;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 0;
+      left: 5px;
+      right: 5px;
+      color: #757575;
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 60px;
+      transition: 0.2s ease;
+    }
+
+    .line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #858585;
+      width: 100%;
+      height: 1px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background: @dark;
+        width: 0;
+        height: 2px;
+        transition: width .2s ease;
+      }
+
+      &::before {
+        left: 50%;
+      }
+
+      &::after {
+        right: 50%;
+      }
+    }
+
+    button {
+      outline: 0;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      background: 0;
+      width: 100%;
+      border: 2px solid #e3e3e3;
+      padding: 20px 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .3s ease;
+
+      span {
+        position: relative;
+        z-index: 1;
+        color: #ddd;
+        -webkit-transition: .3s ease;
+        transition: .3s ease;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        background: @dark;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin: -15px 0 0 -15px;
+        opacity: 0;
+        transition: .3s ease;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-color: @dark;
+
+        span {
+          color: @dark;
+        }
+      }
+
+      &:active,
+      &:focus {
+        span {
+          color: @light;
+        }
+
+        &::before {
+          opacity: 1;
+          transform: scale(20);
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin: 40px 0 0;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+
+    a {
+      color: darken(@light, 30%);
+      transition: color .3s ease;
+
+      &:hover {
+        color: darken(@light, 50%);
+      }
+    }
+  }
+
+  &.alt {
+    position: absolute;
+    top: 40px;
+    right: -70px;
+    z-index: 10;
+    width: 140px;
+    height: 140px;
+    background: none;
+    border-radius: 100%;
+    box-shadow: none;
+    padding: 0;
+    transition: .3s ease;
+
+    .toggle {
+      position: relative;
+      background: @dark;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      box-shadow: @shadow;
+      color: @light;
+      font-size: 58px;
+      line-height: 140px;
+      text-align: center;
+      cursor: pointer;
+
+      &:before {
+        content: '\f040';
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        transform: translate(0, 0);
+      }
+    }
+
+    .title,
+    .field,
+    .button-container {
+      left: 100px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .title {
+      position: relative;
+      border-color: @light;
+      color: @light;
+
+      .close {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 60px;
+        display: inline;
+        color: @light;
+        font-size: 58px;
+        font-weight: 400;
+
+        &:before {
+          content: '\00d7';
+        }
+      }
+    }
+
+    .field {
+      input {
+        color: @light;
+
+        &:focus {
+          ~ label {
+            color: @light;
+          }
+
+          ~ .line {
+            &:before,
+            &:after {
+              background: @light;
+            }
+          }
+        }
+
+        &:valid {
+          ~ label {
+            color: @light;
+          }
+        }
+      }
+
+      label {
+        color: fade(@light, 0.8);
+      }
+
+      .line {
+        background: fade(@light, 0.8);
+      }
+
+      button {
+        width: 100%;
+        background: @light;
+        border-color: @light;
+
+        span {
+          color: @dark;
+        }
+
+        &:hover {
+          background: fade(@light, 0.9);
+        }
+
+        &:active,
+        &:focus {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
