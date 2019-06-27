@@ -30,12 +30,9 @@ body > .header {
     font-weight: 300;
   }
 
-  p {
+  .meta {
     font-size: 12px;
 
-    i {
-      color: @dark;
-    }
     a {
       color: @dark;
       font-weight: 600;
@@ -93,9 +90,6 @@ body > .header {
       line-height: 45px;
       border-left: 5px solid @dark;
       text-transform: uppercase;
-    }
-    .toggle {
-
     }
   }
 
@@ -263,6 +257,7 @@ body > .header {
     transition: .3s ease;
 
     .toggle {
+      display: inline-block;
       position: relative;
       background: @dark;
       width: 140px;
@@ -274,17 +269,6 @@ body > .header {
       line-height: 140px;
       text-align: center;
       cursor: pointer;
-
-      &:before {
-        content: '\f040';
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        transform: translate(0, 0);
-      }
     }
 
     .title,
