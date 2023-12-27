@@ -1,14 +1,14 @@
 {
-  "name": "account",
+  "name": "auth-pages",
   "version": "0.1.0",
-  "description": "An account page",
-  "homepage": "https://github.com/zce/account-pages#readme",
+  "description": "An auth page",
+  "homepage": "https://github.com/zce/auth-pages#readme",
   "bugs": {
-    "url": "https://github.com/zce/account-pages/issues"
+    "url": "https://github.com/zce/auth-pages/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zce/account-pages.git"
+    "url": "git+https://github.com/zce/auth-pages.git"
   },
   "license": "MIT",
   "author": {
@@ -20,6 +20,6 @@
     "start": "serve"
   },
   "devDependencies": {
-    "serve": "^11.0.2"
+    "serve": "latest"
   }
 }

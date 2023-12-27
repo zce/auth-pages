@@ -1,8 +1,8 @@
 // https://toddmotto.com/what-function-window-document-undefined-iife-really-means/
 (function (window, document, undefined) {
   var containerElement = document.querySelector('.container')
-  var openElement = document.querySelector('.open')
-  var closeElement = document.querySelector('.close')
+  var openElement = document.querySelector('.toggle')
+  var closeElement = document.querySelector('.toggle')
 
   var isRegister = containerElement.classList.contains('active')
   var titleSuffix = document.title.substr(document.title.indexOf(' « '))

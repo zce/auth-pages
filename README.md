@@ -1,3 +1,3 @@
-# account-pages
+# auth-pages
 
-An account page
+An auth page
